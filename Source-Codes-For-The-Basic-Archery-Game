@@ -1,0 +1,481 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SonHali
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("                                                      WELCOME!");
+            Console.ReadKey();
+
+            string val;
+            Console.Write("                                         Enter the X value for fighter A: ");
+            val = Console.ReadLine();
+            int x = Convert.ToInt32(val);
+
+            Console.Write("                                         Enter the Y value for fighter A: ");
+            val = Console.ReadLine();
+            int y = Convert.ToInt32(val);
+
+            if (((x <= 10) && (x >= -10) && (y <= 10) && (y >= -10)))
+            {
+                Console.WriteLine("Coordinates for fighter A are selected correctly...");
+            }
+            else
+            {
+                Console.WriteLine("ERROR,please write valid numbers.");
+                Console.ReadKey();
+                Environment.Exit(0);
+            }
+
+            Console.WriteLine("The war sets of all fighters' are being selected...");
+            Console.WriteLine("The health status for all fighters' are being selected...");
+            Console.WriteLine("The coordinates of other fighters' are being selected...");
+            Console.ReadKey();
+
+            Random rnd = new Random();
+            int Xb = rnd.Next(-10, 11);
+            int Yb = rnd.Next(-10, 11);
+            int Xc = rnd.Next(-10, 11);
+            int Yc = rnd.Next(-10, 11);
+
+
+
+            Console.Write("                                         The coordinates for fighter A is: {0},", x);
+            Console.WriteLine(y);
+
+            Console.Write("                                         The coordinates for fighter B is: {0},", Xb);
+            Console.WriteLine(Yb);
+
+            Console.Write("                                         The coordinates for fighter C is: {0},", Xc);
+            Console.WriteLine(Yc);
+            Console.ReadKey();
+
+
+           
+
+
+            Random sets = new Random();
+            int sa = sets.Next(1, 4);
+            int sb, sc;
+            sb = 0;
+            sc = 0;
+            if (sa == 1)
+            {
+                sb = sets.Next(2, 4);
+                if (sb == 2)
+                    sc = 3;
+
+                else
+                {
+                    sb = 3;
+                    sc = 2;
+                }
+
+            }
+            else if (sa == 2)
+            {
+                sb = sets.Next(1, 3);
+                if (sb == 1)
+                    sc = 3;
+                else
+                {
+                    sb = 3;
+                    sc = 1;
+                }
+
+            }
+            else if (sa == 3)
+            {
+                sb = sets.Next(1, 3);
+                if (sb == 1)
+                    sc = 2;
+                else
+                {
+                    sc = 1;
+                    sb = 2;
+                }
+            }
+
+
+            Random health = new Random();
+            int ha = health.Next(1, 4);
+            int hb, hc;
+            hb = 0;
+            hc = 0;
+            if (ha == 1)
+            {
+                ha = 60;
+                hb = health.Next(2, 4);
+                if (hb == 2)
+                {
+                    hb = 80;
+                    hc = 100;
+                }
+
+                else if (hb == 3)
+                {
+                    hb = 100;
+                    hc = 80;
+                }
+
+            }
+            else if (ha == 2)
+            {
+                ha = 80;
+                hb = health.Next(1, 3);
+                if (hb == 1)
+                {
+                    hc = 100;
+                    hb = 60;
+                }
+
+                else if (hb == 2)
+                {
+                    hb = 100;
+                    hc = 60;
+                }
+
+            }
+            else if (ha == 3)
+            {
+                ha = 100;
+                hb = health.Next(1, 3);
+                if (hb == 1)
+                {
+                    hb = 60;
+                    hc = 80;
+                }
+                else if (hb == 2)
+                {
+                    hb = 80;
+                    hc = 60;
+                }
+            }
+
+
+
+                Console.WriteLine("       +- - - - - - - - - - ^ - - - - - - - - - -^ ");
+                Console.WriteLine("    10 |. . . . . . . . . . | . . . . . . . . . .| ");
+                Console.WriteLine("     9 |. . . . . . . . . . | . . . . . . . . . .| ");
+                Console.WriteLine("     8 |. . . . . . . . . . | . . . . . . . . . .| ");
+                Console.WriteLine("     7 |. . . . . . . . . . | . . . . . . . . . .| ");
+                Console.WriteLine("     6 |. . . . . . . . . . | . . . . . . . . . .| ");
+                Console.WriteLine("     5 |. . . . . . . . . . | . . . . . . . . . .| ");
+                Console.WriteLine("     4 |. . . . . . . . . . | . . . . . . . . . .| ");
+                Console.WriteLine("     3 |. . . . . . . . . . | . . . . . . . . . .| ");
+                Console.WriteLine("     2 |. . . . . . . . . . | . . . . . . . . . .| ");
+                Console.WriteLine("     1 |. . . . . . . . . . | . . . . . . . . . .| ");
+                Console.WriteLine("     0 | - - - - - - - - - - - - - - - - - - - - > ");
+                Console.WriteLine("     1 |. . . . . . . . . . | . . . . . . . . . .| ");
+                Console.WriteLine("     2 |. . . . . . . . . . | . . . . . . . . . .| ");
+                Console.WriteLine("     3 |. . . . . . . . . . | . . . . . . . . . .| ");
+                Console.WriteLine("     4 |. . . . . . . . . . | . . . . . . . . . .| ");
+                Console.WriteLine("     5 |. . . . . . . . . . | . . . . . . . . . .| ");
+                Console.WriteLine("     6 |. . . . . . . . . . | . . . . . . . . . .| ");
+                Console.WriteLine("     7 |. . . . . . . . . . | . . . . . . . . . .| ");
+                Console.WriteLine("     8 |. . . . . . . . . . | . . . . . . . . . .| ");
+                Console.WriteLine("     9 |. . . . . . . . . . | . . . . . . . . . .| ");
+                Console.WriteLine("    10 |. . . . . . . . . . | . . . . . . . . . .| ");
+                Console.WriteLine("      - - - - - - - - - - - - - - - - - - - - - - +");
+                Console.WriteLine("       10 9 8 7 6 5 4 3 2 1 0 1 2 3 4 5 6 7 8 9 10 ");
+
+            string a = "A";
+            string b = "B";
+            string c = "C";
+
+            Console.SetCursorPosition(28 + (2 * x), 21 + (y * -1));
+            Console.Write(a);
+
+            Console.SetCursorPosition(28 + (2 * Xb), 21 + (Yb * -1));
+            Console.Write(b);
+
+            Console.SetCursorPosition(28 + (2 * Xc), 21 + (Yc * -1));
+            Console.Write(c);
+
+            Console.SetCursorPosition(0, 36);
+
+            Console.WriteLine("A's set is   " + sa + "   and health is   " + ha);
+            Console.WriteLine("B's set is   " + sb + "   and health is   " + hb);
+            Console.WriteLine("C's set is   " + sc + "   and health is   " + hc);
+
+            Console.ReadKey();
+
+
+        
+            double ab = Math.Sqrt(Math.Pow(Xb - x, 2) + Math.Pow(Yb - y, 2));
+            double ac = Math.Sqrt(Math.Pow(Xc - x, 2) + Math.Pow(Yc - y, 2));
+            double cb = Math.Sqrt(Math.Pow(Xb - Xc, 2) + Math.Pow(Yb - Yc, 2));
+
+
+            Console.SetCursorPosition(0, 42);
+
+            int SCOAb = ((10 * (Math.Abs(x - Xb) + Math.Abs(y - Yb))) + (ha - 25));
+            int SCOAc = ((10 * (Math.Abs(x - Xc) + Math.Abs(y - Yc))) + (ha - 25));
+            int SCOBa = ((10 * (Math.Abs(x - Xb) + Math.Abs(y - Yb))) + (hb - 25));
+            int SCOCa = ((10 * (Math.Abs(x - Xc) + Math.Abs(y - Yc))) + (hc - 25));
+            int SCOCb = ((10 * (Math.Abs(Xb - Xc) + Math.Abs(Yb - Yc))) + (hc - 25));
+            int SCOBc = ((10 * (Math.Abs(Xc - Xb) + Math.Abs(Yc - Yb))) + (hb - 25));
+
+
+            /*ROUND 1*/
+
+
+            if (15 < ab && 15 < ac && 15 < cb)
+            {
+                Console.WriteLine("too distant, no attack ");
+                Console.WriteLine("A = non-fighter Health: " + ha + " score:0");
+                Console.WriteLine("B = non-fighter Health: " + hb + " score:0");
+                Console.WriteLine("C = non-fighter Health: " + hc + " score:0");
+            }
+
+
+            
+            if ((ab <= ac && ab <= cb) && ab <= 15)
+            {
+                Console.WriteLine("ROUND 1: A-B");
+                if (((sa == 1) && (sb == 3)) || ((sa == 2) && (sb == 1)) || ((sa == 3) && (sb == 2)))
+                {
+
+                    Console.WriteLine("A = survivor    Health: " + (ha - 25) + "    score: " + ((10 * (Math.Abs(x - Xb) + Math.Abs(y - Yb))) + (ha - 25)));
+                    Console.WriteLine("B = defeated    Health: 0                    score: 0");
+                    Console.WriteLine("C = non-fighter Health: " + hc +        "    score: 0");
+                    hb = 0;
+                    
+                }
+                else
+                {
+                    Console.WriteLine("A = defeated    Health: 0,                score: 0");
+                    Console.WriteLine("B = survivor    Health: " + (hb - 25) + " score: " + ((10 * (Math.Abs(x - Xb) + Math.Abs(y - Yb))) + (hb - 25)));
+                    Console.WriteLine("C = non-fighter Health: " + hc + "        score: 0");
+                    ha = 0;
+                   
+                }
+            }
+            else if ((ac <= ab && ac <= cb) && ac <= 15)
+            {
+                Console.WriteLine("ROUND 1: A-C");
+                if (((sa == 1) && (sc == 3)) || ((sa == 2) && (sc == 1)) || ((sa == 3) && (sc == 2)))
+                {
+                    Console.WriteLine("A = survivor    Health: " + (ha - 25) + " score: " + ((10 * (Math.Abs(x - Xc) + Math.Abs(y - Yc))) + (ha - 25)));
+                    Console.WriteLine("B = non-fighter Health: " + hb + "        score: 0 ");
+                    Console.WriteLine("C = defeated    Health: 0                 score: 0");
+                    hc = 0;
+                   
+                }
+                else
+                {
+                    Console.WriteLine("A = defeated    Health: 0                 score: 0");
+                    Console.WriteLine("B = non-fighter Health: " + hb + "        score: 0");
+                    Console.WriteLine("C = survivor    Health: " + (hc - 25) + " score: " + ((10 * (Math.Abs(x - Xc) + Math.Abs(y - Yc))) + (hc - 25)));
+                    ha = 0;
+                  
+                }
+            }
+            else if ((cb <= ac && cb <= ab) && cb <= 15)
+            {
+                Console.WriteLine("ROUND 1: B-C");
+                if (((sc == 1) && (sb == 3)) || ((sc == 2) && (sb == 1)) || ((sc == 3) && (sb == 2)))
+                {
+                    Console.WriteLine("A = non-fighter Health: " + ha + "        score: 0  ");
+                    Console.WriteLine("B = defeated    Health: 0                 score: 0");
+                    Console.WriteLine("C = survivor    Health: " + (hc - 25) + " score: " + ((10 * (Math.Abs(Xb - Xc) + Math.Abs(Yb - Yc))) + (hc - 25)));
+                    hb = 0;
+                  
+                }
+                else
+                {
+                    Console.WriteLine("A = non-fighter Health: " + ha + "        score: 0 ");
+                    Console.WriteLine("B = survivor    Health: " + (hb - 25) + " score: " + ((10 * (Math.Abs(Xc - Xb) + Math.Abs(Yc - Yb))) + (hb - 25)));
+                    Console.WriteLine("C = defeated    Health: 0                 score: 0");
+                    hc = 0;
+                    
+                }
+            }
+
+            Console.ReadKey();
+            Console.SetCursorPosition(0, 47);
+
+            /*ROUND 2*/
+
+            Console.WriteLine("ROUND 2");
+
+            if (ha == 0)
+            {
+                if (cb > 15)
+                {
+                    if (hb % 10 == 0)
+                    {
+                      
+                        Console.WriteLine("too distant, no attack ");
+                        Console.WriteLine("A = defeated    Health: " + ha + " score:0");
+                        Console.WriteLine("B = non-fighter Health: " + hb + " score:0" );
+                        Console.WriteLine("C = non-fighter Health: " + hc + " score:" + SCOCa);
+                        Console.WriteLine("C has the maximum score:" + SCOCa);
+                    }
+                    else
+                    {
+                        Console.WriteLine("too distant, no attack ");
+                        Console.WriteLine("A = defeated    Health: " + ha + " score:0");
+                        Console.WriteLine("B = non-fighter Health: " + hb + " score:" + SCOBa);
+                        Console.WriteLine("C = non-fighter Health: " + hc + " score:0");
+                        Console.WriteLine("B has the maximum score:" + SCOBa);
+                    }
+                }
+
+               else
+                {
+                    if (((sc == 1) && (sb == 3)) || ((sc == 2) && (sb == 1)) || ((sc == 3) && (sb == 2)))
+                    {
+                        /*
+                        if (SCOCb > SCOBa)
+                        Console.WriteLine("C has the maximum score:" + SCOCb);
+                        else
+                        Console.WriteLine("B has the maximum score:" + SCOBa);
+                       */
+                        Console.WriteLine("A = defeated    Health: 0 " + "           score: 0  ");
+                        Console.WriteLine("B = defeated    Health: 0                 score:" + SCOBa);
+                        Console.WriteLine("C = survivor    Health: " + (hc - 25) + " score: " + ((10 * (Math.Abs(Xb - Xc) + Math.Abs(Yb - Yc))) + (hc - 25)));
+                        if (SCOCb > SCOBa)
+                            Console.WriteLine("C has the maximum score:" + SCOCb);
+                        else
+                            Console.WriteLine("B has the maximum score:" + SCOBa);
+                    }
+                    else
+                    {
+                        Console.WriteLine("A = defeated    Health: 0 " + "           score: 0 ");
+                        Console.WriteLine("B = survivor    Health: " + (hb - 25) + " score: " + ((10 * (Math.Abs(Xc - Xb) + Math.Abs(Yc - Yb))) + (hb - 25)));
+                        Console.WriteLine("C = defeated    Health: 0                 score:" + SCOCa);
+                        if (SCOCa > SCOBc)
+                            Console.WriteLine("C has the maximum score:" + SCOCa);
+                        else
+                            Console.WriteLine("B has the maximum score:" + SCOBc);
+                    }
+
+                }
+            }
+
+
+
+
+
+            if (hb == 0)
+            {
+                if (ac > 15)
+                {
+                    if (ha % 10 == 0)
+                    {
+                        Console.WriteLine("too distant, no attack ");
+                        Console.WriteLine("A = defeated    Health: " + ha + " score:0");
+                        Console.WriteLine("B = non-fighter Health: " + hb + " score:0");
+                        Console.WriteLine("C = non-fighter Health: " + hc + " score:" + SCOCb);
+                        Console.WriteLine("C has the maximum score:" + SCOCb);
+                    }
+                    else
+                    {
+                        Console.WriteLine("too distant, no attack ");
+                        Console.WriteLine("A = defeated    Health: " + ha + " score:" + SCOAb);
+                        Console.WriteLine("B = non-fighter Health: " + hb + " score:0" );
+                        Console.WriteLine("C = non-fighter Health: " + hc + " score:0");
+                        Console.WriteLine("A has the maximum score:" + SCOAb);
+                    }
+                }
+
+                else 
+                {
+                    if (((sa == 1) && (sc == 3)) || ((sa == 2) && (sc == 1)) || ((sa == 3) && (sc == 2)))
+                    {
+                        Console.WriteLine("A = survivor    Health: " + (ha - 25) + " score:" + SCOAc);
+                        Console.WriteLine("B = defeated    Health: 0                 score:0");
+                        Console.WriteLine("C = defeated    Health: 0" + "            score: " + ((10 * (Math.Abs(Xb - Xc) + Math.Abs(Yb - Yc))) + (hc - 25)));
+                        if (SCOAc > SCOCb)
+                            Console.WriteLine("A has the maximum score:" + SCOAc);
+                        else
+                            Console.WriteLine("C has the maximum score:" + SCOCb);
+                    }
+                    else
+                    {
+                        Console.WriteLine("A = defeated    Health: 0 " +      "            score: " +SCOAb);
+                        Console.WriteLine("B = defeated    Health: 0" +       "            score: 0" );
+                        Console.WriteLine("C = survivor    Health: "  + (hc - 25) +  "     score:" + SCOCa);
+                        if (SCOCa > SCOAb)
+                            Console.WriteLine("C has the maximum score:" + SCOCa);
+                        else
+                            Console.WriteLine("A has the maximum score:" + SCOAb);
+                    }
+
+                }
+            }
+
+
+
+
+            if (hc == 0)
+            {
+                if (ab > 15)
+                {
+                    if (hb % 10 == 0)
+                    {
+                        Console.WriteLine("too distant, no attack ");
+                        Console.WriteLine("A =  non-fighter    Health: " + ha + " score:" + SCOAc);
+                        Console.WriteLine("B =  non-fighter    Health: " + hb + " score:0");
+                        Console.WriteLine("C =  defeated       Health: 0" + "     score:0");
+                        Console.WriteLine("A has the maximum score:" + SCOAc);
+                    }
+                    else
+                    {
+                        Console.WriteLine("too distant, no attack ");
+                        Console.WriteLine("A = non-fighter  Health: " + ha + " score:0");
+                        Console.WriteLine("B = non-fighter  Health: " + hb + " score:" + SCOBc);
+                        Console.WriteLine("C = defeated     Health: " + hc + " score:0");
+                        Console.WriteLine("B has the maximum score:" + SCOBc);
+                    }
+                }
+
+                else
+                {
+                    if (((sa == 1) && (sb == 3)) || ((sa == 2) && (sb == 1)) || ((sa == 3) && (sb == 2)))
+                    {
+                        Console.WriteLine("A = survivor    Health:  " + (ha - 25) + "           score:  " + SCOAb);
+                        Console.WriteLine("B = defeated    Health: 0                            score:" + SCOBc);
+                        Console.WriteLine("C = defeated    Health: 0"  +               "        score: 0");
+                        if (SCOBc > SCOAb)
+                            Console.WriteLine("B has the maximum score:" + SCOBc);
+                        else
+                            Console.WriteLine("A has the maximum score:" + SCOAb);
+                    }
+                    else
+                    {
+                        Console.WriteLine("A = defeated    Health: 0 " + "               score: " + SCOAc);
+                        Console.WriteLine("B = survivor    Health: " + (hb - 25) + "     score: " + SCOBa);
+                        Console.WriteLine("C = defeated    Health: 0                     score:0");
+                        if (SCOAc > SCOBa)
+                            Console.WriteLine("A has the maximum score:" + SCOAc);
+                        else
+                            Console.WriteLine("B has the maximum score:" + SCOBa);
+                    }
+
+                }
+            }
+            Console.ReadKey();
+
+            Console.WriteLine("                                                                             THX FOR CHOOSING US!");
+
+            Console.ReadKey();
+
+
+
+
+
+
+
+
+
+        }
+    }
+}
